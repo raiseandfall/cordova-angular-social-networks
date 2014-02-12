@@ -1,0 +1,13 @@
+{
+  "name": "cordova-angular-social-networks",
+  "version": "0.1",
+  "ignore": [
+    "src"
+  ],
+  "dependencies": {
+    "angular": "1.2.12"
+  },
+  "devDependencies": {
+    "angular-mocks": "1.2.12"
+  }
+}
