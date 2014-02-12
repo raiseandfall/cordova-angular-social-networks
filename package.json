@@ -1,11 +1,7 @@
 {
   "name": "cordova-angular-social-networks",
-  "version": "0.1",
+  "version": "0.0.1",
   "description": "A set of AngularJS services for Social Networks APIs use in Cordova.",
-  "directories": {
-    "example": "example",
-    "test": "test"
-  },
   "repository": {
     "type": "git",
     "url": "git://github.com/raiseandfall/cordova-angular-social-networks.git"
