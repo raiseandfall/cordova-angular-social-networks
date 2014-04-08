@@ -39,9 +39,9 @@ module.exports = function(grunt) {
       options: {
         livereload: true
       },
-      js: {
-        files: ['src/*.js'],
-        tasks: ['build']
+      karma: {
+        files: ['src/*.js', 'test/**/*.js'],
+        tasks: ['karma:unit:run']
       }
     },
 
@@ -62,6 +62,12 @@ module.exports = function(grunt) {
       all: [
         'src/*.js'
       ]
+    },
+
+    karma: {
+      unit: {
+        configFile: 'karma.conf.js'
+      }
     }
   });
 
@@ -69,7 +75,7 @@ module.exports = function(grunt) {
   grunt.registerTask('js', ['jshint', 'concat']);
 
   grunt.registerTask('dev', ['connect:server', 'watch']);
-  grunt.registerTask('test', ['clean:dist']);
+  grunt.registerTask('test', ['karma']);
 
-  grunt.registerTask('build', ['clean:dist', 'js', 'uglify']);
+  grunt.registerTask('build', ['clean:dist', 'test', 'js', 'uglify']);
 };
