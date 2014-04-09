@@ -77,5 +77,5 @@ module.exports = function(grunt) {
   grunt.registerTask('dev', ['connect:server', 'watch']);
   grunt.registerTask('test', ['karma']);
 
-  grunt.registerTask('build', ['clean:dist', 'test', 'js', 'uglify']);
+  grunt.registerTask('build', ['clean:dist', 'js', 'uglify']);
 };
