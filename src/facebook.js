@@ -9,12 +9,12 @@ ngSocialNetworks.factory('FacebookManager', [
 	'$http',
 	'$q',
 	'Cordova',
-	function FacebookManager($http, $q, Cordova) {
+	function FacebookManager ($http, $q, Cordova) {
 
 		'use strict';
 
-		var _self = this,
-				login,
+		var FB_APP_PARAMS,
+        login,
 				share,
         get,
         set;
@@ -23,7 +23,7 @@ ngSocialNetworks.factory('FacebookManager', [
 		 * @function	authorize
 		 *
 		**/
-		_self.authorize = function() {
+		var _authorize = function () {
 
 		};
 
@@ -32,19 +32,19 @@ ngSocialNetworks.factory('FacebookManager', [
 		 * @function			getLoginURL
 		 * @description		Returns URL to the facebook authentication dialog
 		**/
-		_self.getLoginURL = function() {
+		var _buildLoginURL = function () {
 			return  'https://www.facebook.com/dialog/oauth' +
-							'?client_id=' + _self.FB_APP.clientId +
-							'&redirect_uri=' + _self.FB_APP.redirectUri +
-							'&response_type=code' +
-							'&scope=email,user_relationships,user_friends,publish_actions';
+							'?client_id=' + FB_APP_PARAMS.clientId +
+							'&redirect_uri=' + FB_APP_PARAMS.redirectUri +
+							'&response_type=' + FB_APP_PARAMS.reponseType +
+							'&scope=' + FB_APP_PARAMS.scope;
 		};
 
 		/**
 		 * @function			getAccessToken
 		 * @description		Get an access token from Facebook
 		**/
-		_self.getAccessToken = function(code) {
+		var _getAccessToken = function (code) {
 
 		};
 
@@ -53,23 +53,23 @@ ngSocialNetworks.factory('FacebookManager', [
 		 * @function			set
 		 * @description		set Facebook app ID & SECRET
 		**/
-		set = function( obj ) {
-			_self.FB_APP = obj;
+		set = function (obj) {
+			FB_APP_PARAMS = obj;
 		};
 
     /**
      * @function			get
      * @description		get Facebook app ID & SECRET
     **/
-    get = function() {
-      return _self.FB_APP;
+    get = function () {
+      return FB_APP_PARAMS;
     };
 
 
 		/**
 		 * @function	login
 		**/
-		login = function() {
+		login = function () {
 
 		};
 
@@ -78,7 +78,7 @@ ngSocialNetworks.factory('FacebookManager', [
 		 * @function			share
 		 * @description		Shares content on Facebook's user wall
 		**/
-		share = function(content) {
+		share = function (content) {
 
 		};
 
